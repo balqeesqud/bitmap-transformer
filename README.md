@@ -44,5 +44,6 @@ This transform rotates the image by a specified angle (in degrees) around its ce
 
 ![Image](./app/src/main/resources/JunitTests.png)
 
+### Logging Useful Messages about the progress of the transformer while running
 
-
+![Image](./app/src/main/resources/UsefulMessegesLogged.png)

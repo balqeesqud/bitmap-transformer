@@ -1,5 +1,5 @@
 package bitmap.transformer;
-
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class BitMap {
+    private static final Logger logger = Logger.getLogger(BitMap.class.getName());
     BufferedImage bufferedImage;
 
     public BitMap(String filePath) throws IOException {
@@ -22,6 +23,10 @@ public class BitMap {
 
     }
     public void addBorder(int borderWidth, Color borderColor) {
+        logger.info("Adding border to the image...");
+
+
+
         int width = this.bufferedImage.getWidth();
         int height = this.bufferedImage.getHeight();
 
@@ -29,6 +34,7 @@ public class BitMap {
                 width + 2 * borderWidth,
                 height + 2 * borderWidth,
                 this.bufferedImage.getType()
+
         );
 
         for (int i = 0; i < newImage.getWidth(); i++) {
@@ -43,9 +49,11 @@ public class BitMap {
         }
 
         this.bufferedImage = newImage;
+        logger.info("Border added successfully.");
     }
 
     public void invertColors() {
+        logger.info("Inverting Image colors...");
         for (int i = 0; i < this.bufferedImage.getWidth(); i++) {
             for (int j = 0; j < this.bufferedImage.getHeight(); j++) {
                 Color color = new Color(this.bufferedImage.getRGB(i, j));
@@ -57,9 +65,11 @@ public class BitMap {
                 this.bufferedImage.setRGB(i, j, invertedColor.getRGB());
             }
         }
+        logger.info("Image color Inverted successfully.");
     }
 
     public void rotateImage(double angle) {
+        logger.info("Rotating Image ...");
         int width = this.bufferedImage.getWidth();
         int height = this.bufferedImage.getHeight();
 
@@ -76,6 +86,7 @@ public class BitMap {
         g2d.dispose();
 
         this.bufferedImage = rotatedImage;
+        logger.info("Image rotated successfully.");
     }
 
 }
