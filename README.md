@@ -26,6 +26,14 @@ This transform rotates the image by a specified angle (in degrees) around its ce
 
 ---
 
+## CLI Resultes 
+
+![Image](./app/src/main/resources/cli%201.png)
+
+![Image](./app/src/main/resources/cli%202.png)
+
+---
+
 ### Getting Started
 1. Clone this repository to your local machine.
 2. Navigate to the project directory in the command line.
